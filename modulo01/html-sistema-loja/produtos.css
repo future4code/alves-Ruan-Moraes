@@ -1,0 +1,8 @@
+.cabeçalho{
+    color: rgb(230, 213, 213);
+    background-color: rgb(17, 4, 4);
+    margin: 2%;
+    border: solid;
+    border-color: rgb(230, 221, 221);
+    display: inline-block;
+}
