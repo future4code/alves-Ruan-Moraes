@@ -24,6 +24,9 @@ input {
     border-left: none;
     border-bottom-width: 2px;
 }
+body{
+    font-family: roboto, arial, helvetica, sans-serif;
+}
 
 
 button:focus {
