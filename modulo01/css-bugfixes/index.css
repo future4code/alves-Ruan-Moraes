@@ -129,7 +129,7 @@ td button {
 }
 
 
-.back-button {
+#back-button {
 
     background-color: rgb(226, 21, 21);
     width: 100px;
@@ -137,10 +137,21 @@ td button {
     border: 1px solid black;
     border-radius: 5px;
     font-size: 10px;
-    color: rgb(36, 3, 3);
+    color: rgb(14, 13, 13);
 }
 
 #back-button:hover {
     background-color: #55430a
     
+}
+#back-button:active{
+    color: white;
+}
+
+.botão-comprar:hover{
+    background-color: #796b2f;
+
+}
+.botão-comprar:active{
+    color: white;
 }
