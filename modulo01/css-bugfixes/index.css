@@ -31,6 +31,11 @@ img {
 .imagem{
     height: 70px;
 }
+#lupa{
+   
+    width: 15px ;
+
+}
 
 div>p:first-child {
     display: inline;
