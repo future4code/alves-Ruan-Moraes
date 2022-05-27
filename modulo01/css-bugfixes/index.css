@@ -121,6 +121,7 @@ div:last-child {
 table {
     width: 60%;
     text-align: center;
+    margin: 0 auto;
 }
 
 td button {
@@ -134,27 +135,33 @@ td button {
 .container-do-search {
     margin-top: 20px;
     height: 100px;
+    text-align: center;
+
 }
 
 
-#back-button {
+.back-button {
 
-    background-color: rgb(226, 21, 21);
+    background-color: white;
     width: 100px;
     height: 20px;
     border: 1px solid black;
     border-radius: 5px;
     font-size: 10px;
-    color: rgb(14, 13, 13);
+    color: black;
+    margin: auto;
+    
 }
 
-#back-button:hover {
+.back-button:hover {
     background-color: #55430a
     
 }
-#back-button:active{
+.back-button:active{
     color: white;
 }
+
+
 
 .botão-comprar:hover{
     background-color: #796b2f;
@@ -162,4 +169,10 @@ td button {
 }
 .botão-comprar:active{
     color: white;
+}
+#botão-lupa:hover{
+    opacity: 0.5;
+}
+#botão-lupa:active{
+    opacity: 1;
 }
