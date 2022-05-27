@@ -1,0 +1,24 @@
+.cabeçalho{
+    color: rgb(107, 17, 17);
+    background-color: rgb(224, 210, 210);
+    margin: 2%;
+    border: solid;
+    border-color: rgb(107, 17, 17);
+    display: inline-block;
+}
+body{
+    padding: 5%;
+    background-color: rgb(224, 210, 210);
+    color:rgb(107, 17, 17)
+}
+a{
+    background-color: rgb(224, 210, 210);
+    border: solid;
+    border-color: rgb(107, 17, 17);
+    color: rgb(107, 17, 17);
+    text-decoration: none;
+}
+main{
+    margin-top: 2%;
+    font-size: 250%;
+}
