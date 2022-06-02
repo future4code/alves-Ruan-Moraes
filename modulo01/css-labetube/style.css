@@ -58,9 +58,34 @@ video {
 .logo a {
     text-decoration: none;
 }
-
-footer {
-    text-align: center;
+a {
+    margin: 10px;
+    display: grid;  
+    
+}
+footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+footer h1{
+    padding: 1vw;
     border: black solid;
     background-color: rgb(43, 88, 13);
 } 
+
+@media screen and (max-width: 800px){
+    main{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap:wrap;
+    }
+
+    footer{
+        position: unset ;
+    }
+
+
+}
+    

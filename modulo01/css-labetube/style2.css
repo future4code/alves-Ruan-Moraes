@@ -43,3 +43,29 @@ body{
     display: flex;
     flex-direction: column;
 }
+footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+footer h1{
+    padding: 1vw;
+    border: black solid;
+    background-color: rgb(43, 88, 13);
+} 
+
+@media screen and (max-width: 800px){
+    header{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap:wrap;
+    }
+
+    footer{
+        position: unset ;
+    }
+
+
+}
+  
