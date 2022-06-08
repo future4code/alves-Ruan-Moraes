@@ -1,5 +1,6 @@
 import React from 'react';
-import './CardGrande.css'
+import './CardGrande.css';
+import styled from 'styled-components';
 
 function CardGrande(props) {
     return (
