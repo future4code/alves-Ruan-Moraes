@@ -25,17 +25,25 @@ Abra [ http://localhost:3000 ](http://localhost:3000) para visualizá-lo em seu 
 A página será recarregada quando você fizer alterações.\
 Você também pode ver erros de lint no console.
 ## 📸 Imagens 
-![ imagem ](image.png)
+![ imagem ]
+![image](https://user-images.githubusercontent.com/104790028/178166583-4d9e61c3-298e-431a-b5b4-ffc8937cf760.png)
+
 
 ### `teste npm` 
-![ imagem ](image.png)
+![ imagem ]
+![image](https://user-images.githubusercontent.com/104790028/178166607-8a682592-add8-4b3c-ac20-635f10d8a531.png)
+
 
 Inicia o executor de teste no modo de exibição interativa.\
 Consulte a seção sobre [ executar testes ](https://facebook.github.io/create-react-app/docs/running-tests) para obter mais informações.
-![ imagem ](image.png)
+![ imagem ]
+![image](https://user-images.githubusercontent.com/104790028/178166686-56788d6d-0cbe-43f9-8c0c-17f480938045.png)
+
 
 ### `npm executar compilação` 
-![ imagem ](image.png)
+![ imagem ]
+![image](https://user-images.githubusercontent.com/104790028/178166706-e1d85b5c-038d-4931-bb7e-f5f22241d8c5.png)
+
 
 Compila o aplicativo para produção na pasta `build` .\
 Ele agrupa corretamente o React no modo de produção e otimiza a compilação para o melhor desempenho.
