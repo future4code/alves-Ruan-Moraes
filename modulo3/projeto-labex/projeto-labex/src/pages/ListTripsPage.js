@@ -1,16 +1,15 @@
-import React from 'react';
+import React from 'react'
 import Button from '../styled/ButtonGeral'
 
-export function ListTrip () {
+
+export function TripDetails () {
     return (
         <div>
             <Button>Voltar</Button>
 
-            <Button>Inscreva-se</Button>
+            <h2>Candidatos Pendentes</h2>
 
-            <h2>Lista de viagens</h2>
-
-
+            <h2>Candidatos Aprovados</h2>
         </div>
     )
 }

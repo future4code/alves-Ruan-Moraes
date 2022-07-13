@@ -1,14 +1,40 @@
 import React from 'react';
 import Button from '../styled/ButtonGeral'
+import { Conteiner } from '../styled/Conteiner';
+import { ConteinerInput } from '../styled/ConteinerInput'
 
-export function HomePage () {
+export function CreateTrip () {
     return (
-        <div>
-            <h2>LabeX</h2>
-          <Button>Viagens</Button>
+        <Conteiner>
+            <h2>Criar Viagem</h2>
 
-          <Button>Adminstração</Button>
+            <ConteinerInput placeholder="Nome"/>
 
-        </div>
+            <select>
+                <option>Escolha um planeta</option>
+                <option>Mercúrio</option>
+                <option>Vênus</option>
+                <option>Terra</option>
+                <option>Marte</option>
+                <option>Júpiter</option>
+                <option>Saturno</option>
+                <option>Urano</option>
+                <option>Netuno</option>
+
+            </select>
+
+            <ConteinerInput type="date"/>
+
+            <ConteinerInput placeholder="Descrição"/>
+
+            <ConteinerInput placeholder="Duração em dias"/>
+
+          <Button>Voltar</Button>
+
+          <Button>Criar</Button>
+
+
+
+        </Conteiner>
     )
 }
