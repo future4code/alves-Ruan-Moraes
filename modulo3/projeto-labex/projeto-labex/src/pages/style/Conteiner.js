@@ -1,9 +1,10 @@
 import styled from "styled-components";
-
 export const Conteiner = styled.div ` 
-    display: flex;
-    flex-direction: column;
     text-align: center;
     margin: auto;
-    width: 500px;
+    display: flex;
+    flex-direction: column;    
+    height: 89vh;
+    background-color:#fdfaea;
+   
 `
