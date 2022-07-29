@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class ErroPage extends Component {
-  render() {
-    return (
-      <div>ErroPage</div>
-    )
-  }
+
+const ErrorPage=() =>{
+  return (
+    <div>
+      <h1>ErrorPage</h1>
+      </div>
+  )
 }
+export default ErrorPage;

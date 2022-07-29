@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class AddRecipesPage extends Component {
-  render() {
-    return (
-      <div>AddRecipesPage</div>
-    )
-  }
+
+const AddRecipesPage =() =>{
+  return (
+    <div>
+      <h1>AddRecipesPage</h1>
+      </div>
+  )
 }
+export default AddRecipesPage;

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter,Switch , Route} from "react-router-dom";
+import {BrowserRouter, Routes,Route} from "react-router-dom";
 import AddRecipesPage from "../pages/AddRecipesPage/AddRecipesPage";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import RecipeDetailPage from "../pages/RecipeDetailPage/RecipeDetailPage";
@@ -11,26 +11,26 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 const Router = () =>{
     return(
         <BrowserRouter>
-             <Switch>
-                <Route exact path="/login">
-                    <LoginPage/>
+             <Routes>
+                <Route  path= "/login"element={LoginPage}>
+                    
                 </Route>
-                <Route exact path="/cadastro">
-                    <SignUpPage/>
+                <Route path= "adicionar-receita"element={AddRecipesPage}>
+                    
                 </Route>
-                <Route exact path="/detalhe:id">
-                    <RecipeDetailPage/>
+                <Route path= "/detalhe:id"element={RecipeDetailPage}>
+                    
                 </Route>
-                <Route exact path="/">
-                    <RecipesListPage/>
+                <Route path= "/Cadastro"element={SignUpPage}>
+                    
                 </Route>
-                <Route exact path="/adicionar-receita">
-                    <AddRecipesPage />
+                <Route path= "/"element={RecipesListPage}>
+                    
                 </Route>
                 <Route>
                     <ErrorPage/>
                 </Route>
-             </Switch>
+             </Routes>
         </BrowserRouter>
     )
 
