@@ -3,7 +3,7 @@
 A) Chave estrangeira é uma especie de avisar o workbench que vira uma primary key da tabela que ficara linkada com outra.
 B) INSERT INTO Rating values
 ("03","Comentario Avaliativo 02",6,"004");
-C)Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`alves-petrick-grillo`.`Rating`, CONSTRAINT `Rating_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `Movie` (`id`))	0.140 sec
+C)Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`alves-ruan-moraes`.`Rating`, CONSTRAINT `Rating_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `Movie` (`id`))	0.140 sec
 D)Error Code: 1054. Unknown column 'rating' in 'where clause'	0.156 sec
 
 ### Exercicio 02)
@@ -17,10 +17,10 @@ VALUES (
 "male"
 );
 
-C)Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`alves-petrick-grillo`.`MovieCast`, CONSTRAINT `MovieCast_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `Movie` (`id`))	0.141 sec
+C)Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`alves-ruan-moraes`.`MovieCast`, CONSTRAINT `MovieCast_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `Movie` (`id`))	0.141 sec
 O erro diz que nao é possivel achar ou que a foreing key nao é compativel com o banco de dados e a table selecionada.
 
-D)Error Code: 1451. Cannot delete or update a parent row: a foreign key constraint fails (`alves-petrick-grillo`.`MovieCast`, CONSTRAINT `MovieCast_ibfk_2` FOREIGN KEY (`actor_id`) REFERENCES `Actor` (`id`))	0.140 sec
+D)Error Code: 1451. Cannot delete or update a parent row: a foreign key constraint fails (`alves-ruan-moraes`.`MovieCast`, CONSTRAINT `MovieCast_ibfk_2` FOREIGN KEY (`actor_id`) REFERENCES `Actor` (`id`))	0.140 sec
 Não é possivel pois esta linkada/fazendo referencia a table de Atores
 
 ### Exercicio 03)
