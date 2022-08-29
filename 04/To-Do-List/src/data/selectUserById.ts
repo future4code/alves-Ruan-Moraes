@@ -1,16 +1,13 @@
-import { connection } from "./baseDataBase";
-import { UserData } from "../types/user";
+import { connection } from "./baseDatabase"
 
-export default async function selectUserById(id: string): Promise<UserData | undefined> {
+const selectUserById = async (id: number): Promise<any> => {
 
-    const [result] = await connection('user_to_do_list')
-        .select('id', 'nickname')
-        .where({ id })
+    const result = await connection
+        .select("*")
+        .from("TodoListUser")
+        .where("id", id)
 
-    const userData: UserData = {
-        id: result.id,
-        nickname: result.nickname
-    }
-
-    return userData
+    return result
 }
+
+export default selectUserById

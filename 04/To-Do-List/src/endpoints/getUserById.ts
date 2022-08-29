@@ -1,19 +1,28 @@
-import { Request, Response } from "express";
-import selectUserById from "../data/selectUserById";
+import { Request, Response } from 'express'
+import selectUserById from '../data/selectUserById'
 
-export default async function getUserById(req:Request,res:Response) {
+const getUserById = async (req: Request, res: Response) => {
+
     try {
-      
-      const id:string = req.params.id
-      
-      const user = await selectUserById(id)
 
-      if(!user){
-          throw new Error(`Usuario nao encontrado`)
-      }
+        const { id } = req.params
 
-      res.status(200).send({message:"sucesso",user})
-    } catch (error:any) {
-        res.status(400).send({message: error.message || error.sqlMessage})
+        const user = await selectUserById(Number(id))
+
+        if (!user[0]) {
+            res.statusCode = 404
+            throw new Error("User not found")
+        }
+
+        res.status(200).send(user[0])
+    }
+    catch (error: any) {
+        if (res.statusCode == 200) {
+            res.status(500).send(error.message)
+        } else {
+            res.status(res.statusCode).send(error.message)
+        }
     }
 }
+
+export default getUserById

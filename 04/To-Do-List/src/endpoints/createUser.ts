@@ -1,37 +1,37 @@
-import { Request, Response } from "express";
-import { connection } from "../data/baseDataBase";
-import insertUser from "../data/insertUser";
-import { User, UserInsert } from "../types/user";
+import { Request, Response } from 'express'
+import insertUser from '../data/insertUser'
+import { NewUser } from '../types'
 
-export default async function createUser(req: Request, res: Response) {
+const createUser = async (req: Request, res: Response) => {
+
     try {
-        const { name, nickname, email }: User = req.body
 
-        
-        if(!name || !nickname || !email){
-            throw new Error(`preencha os campos name , nickname ou email`)
+        const { name, nickname, email } = req.body
+
+        if (!name || !nickname || !email) {
+            res.statusCode = 400
+            throw new Error("Fill all fields")
         }
 
-        const userAlreadyExist = await connection.select('*').from('user_to_do_list').where({email})
-        
-        if(userAlreadyExist.length){
-            throw new Error(`Usuario '${name}' ja existente`)
-        }
-
-        const id:string = Date.now() + Math.random().toString()
-
-        const userInsert: UserInsert ={
-            id,
+        const newUser: NewUser = {
             name,
             nickname,
             email
         }
 
-        await insertUser(userInsert)
 
-        res.status(201).send({message:`Usuario ${name} criado com sucesso!!`})
-
-    } catch (error: any) {
-        res.status(400).send({ message: error.message || error.sqlMessage })
+        await insertUser(newUser)
+        res.status(200).send("User created with success")
     }
+    catch (error: any) {
+        if (res.statusCode == 200) {
+            res.status(500).send(error.message)
+        } else {
+            res.status(res.statusCode).send(error.message)
+        }
+    }
+
 }
+
+
+export default createUser

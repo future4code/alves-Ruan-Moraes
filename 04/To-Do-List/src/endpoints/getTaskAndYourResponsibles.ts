@@ -1,7 +1,8 @@
 import { Request, Response } from "express"
+import selectResponsiblesByTask from "../data/selectResponsiblesByTask"
 import selectTaskById from "../data/selectTaskById"
 
-const getTaskById = async (req: Request, res: Response) => {
+const getTaskAndYourResponsibles =  async (req: Request, res: Response) => {
 
     try {
 
@@ -14,12 +15,18 @@ const getTaskById = async (req: Request, res: Response) => {
 
         const task = await selectTaskById(Number(id))
 
+        const responsible = await selectResponsiblesByTask(Number(id))
+
+
         if (!task[0]) {
             res.statusCode = 404
             throw new Error("Task not found")
         }
 
-        res.status(200).send(task[0])
+        const taskWithResponsible = {...task[0], responsibleUsers: responsible}
+
+
+        res.status(200).send(taskWithResponsible)
     }
     catch (error: any) {
         if (res.statusCode == 200) {
@@ -30,4 +37,4 @@ const getTaskById = async (req: Request, res: Response) => {
     }
 }
 
-export default getTaskById
+export default getTaskAndYourResponsibles

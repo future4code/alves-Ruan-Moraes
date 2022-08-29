@@ -1,31 +1,38 @@
-import { Request, Response } from "express";
-import updateUser from "../data/updateUser";
-import { User } from "../types/user";
+import { Request, Response } from "express"
+import { connection } from "../data/baseDatabase"
+import selectUserById from "../data/selectUserById"
+import updateUser from "../data/updateUser"
 
-export default async function editUser(req: Request, res: Response) {
+const editUser = async (req: Request, res: Response) => {
+
     try {
 
-        const id: string = req.params.id
+        const { id } = req.params
+        const { name, nickname } = req.body
 
-        const { name, nickname, email }: User = req.body
-
-        if (name === '' || nickname === '' || email === '') {
-            throw new Error(`Nenhum dos campos podem estar em branco.`)
+        if (!name || !nickname) {
+            res.statusCode = 400
+            throw new Error("Fill all fields")
         }
 
-        if (!name && !nickname && !email) {
-            throw new Error(`escolha ao menos um valor para alterar`)
-        }
-        const userUpdate: User = {
-            name,
-            nickname,
-            email
-        }
-        await updateUser(id, userUpdate)
+        const user = await selectUserById(Number(id))
 
-        res.status(200).send({message:`Usuario Atualizado com sucesso`})
+        if (!user[0]) {
+            res.statusCode = 404
+            throw new Error("User not found")
+        }
 
-    } catch (error: any) {
-        res.status(400).send({ message: error.message || error.sqlMessage })
+        await updateUser(Number(id), name, nickname)
+
+        res.status(200).send("User updated with success")
+    }
+    catch (error: any) {
+        if (res.statusCode == 200) {
+            res.status(500).send(error.message)
+        } else {
+            res.status(res.statusCode).send(error.message)
+        }
     }
 }
+
+export default editUser

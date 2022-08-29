@@ -1,15 +1,18 @@
-import { connection } from "./baseDataBase";
-import { UserInsert } from "../types/user";
+import { connection } from "./baseDatabase"
+import { NewUser } from "../types"
 
-export default async function insertUser(user: UserInsert): Promise<void> {
-    const { id, name, nickname, email } = user
+const insertUser = async (user: NewUser): Promise<any> => {
 
-    await connection.insert({
-        id,
-        name,
-        nickname,
-        email
-    }).into('user_to_do_list')
+    const { name, nickname, email } = user
 
-    
+    await connection
+        .insert({
+            name,
+            nickname,
+            email
+        })
+        .into("TodoListUser")
+
 }
+
+export default insertUser
