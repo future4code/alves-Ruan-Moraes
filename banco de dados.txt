@@ -1,0 +1,4 @@
+DB_HOST = 35.226.146.116
+DB_USER = alves-ruan-moraes
+DB_PASSWORD = 0hut?HXs0tVipuE46fi?
+DB_SCHEMA = alves-ruan-moraes
